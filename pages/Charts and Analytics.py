@@ -63,7 +63,7 @@ df=yf.download(user_ticker_choice,start,end, progress=False)
 
 
 #s&p500 data
-sp500_benchmark= yf.download('^GSPC', start, end)
+sp500_benchmark= yf.download('^GSPC', start, end, progress=False)
 
 #Useful Variables
 shared_variables = {"logreturns": np.log(df['Adj Close']/df['Adj Close'].shift(1)),
@@ -74,7 +74,7 @@ shared_variables = {"logreturns": np.log(df['Adj Close']/df['Adj Close'].shift(1
 #13wk Treasury Bill
 
 def get_annual_rfr(ticker = '^IRX', start = start, end = end):
-    annual_rfr = yf.download(ticker, start, end)['Adj Close']/100
+    annual_rfr = yf.download(ticker, start, end, progress=False)['Adj Close']/100
     return annual_rfr
 
 
