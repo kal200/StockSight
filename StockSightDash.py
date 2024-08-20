@@ -105,8 +105,10 @@ allowed_dates = pd.date_range(
 
 #Select and display data for specific stock
 dash_ticker=st.text_input("Enter ticker: ", "AAPL")
-dash_data=yf.download(dash_ticker, start=dash_start, end=dash_end)
-
+try:
+    dash_data=yf.download(dash_ticker, start=dash_start, end=dash_end, progress=False)
+except Exception as e:
+    st.error(f"Error occurred while obtaining data: {e}")
    
 
 if not isinstance(dash_data.index, pd.DatetimeIndex):
