@@ -10,6 +10,8 @@ import plotly.express as px
 from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import seaborn as sns
+import nltk
+from nltk.data import find, Downloader
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 
@@ -47,6 +49,13 @@ st.sidebar.success("Select Page")
 
 st.title("StockSight Dashboard")
 
+def ensure_vader_lexicon():
+    try:
+        find('sentiment/vader_lexicon.zip')
+    except LookupError:
+        nltk.download('vader_lexicon')
+    
+ensure_vader_lexicon()
 
 
 main_ind = {"^GSPC": [],
