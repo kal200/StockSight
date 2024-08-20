@@ -39,13 +39,13 @@ st.title("Help")
 st.header("Chart Tools")
 st.write(":red[Note:] The Plotly Graphing Library is used to display charts in this app."
          f"  \n  Its documentation can be found here: {doc_url_plotly}")
-st.image('assets\helpimage1.png')
+st.image('assets/helpimage1.png')
 st.write("When using an interactive graph, hover over each tool (located in the red box shown in this example image) to see its function.")
 
 st.subheader("Analyzing Charts")
 col1, col2 = st.columns(2)
-col1.image('assets\helpimage2.png')
-col2.image('assets\helpimage2b.png')
+col1.image('assets/helpimage2.png')
+col2.image('assets/helpimage2b.png')
 st.write("You can focus on a specified window in a chart by either zooming in (left), or by dragging the cursor to the side in the graph body (right)."
          "  \n  :red[Note:] While both methods allow focusing on a specific window, zooming by dragging the cursor also allows you to zoom in on a specific part of the chart/line. ")
 st.write("  \n  To revert to the original graph format, select either the autoscale or home icons")
