@@ -11,7 +11,8 @@ from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import seaborn as sns
 import nltk
-from nltk.data import find, Downloader
+from nltk.data import find
+from nltk.downloader import Downloader
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 
