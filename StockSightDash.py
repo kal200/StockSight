@@ -225,8 +225,8 @@ with fundamental_data:
             #if fund_selected == "Total Debt":
                 #totdebt = yf.Ticker(dash_ticker).info.get('totalDebt')
             if fund_selected == "Debt-to-Equity":
-                de = yf.Ticker(dash_ticker).info.get('debtToEquity')
-                st.subheader(f"Debt-to-Equity ratio: :blue[{de}]")
+                de = yf.Ticker(dash_ticker).info.get('debtToEquity') /100
+                st.subheader(f"Debt-to-Equity ratio: :blue[{round(de, 2)}]")
             if fund_selected == "Quick Ratio":
                 qratio = yf.Ticker(dash_ticker).info.get('quickRatio')
                 st.subheader(f"Quick ratio: :blue[{qratio}]")
