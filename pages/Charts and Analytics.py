@@ -59,7 +59,7 @@ date_diff = (end-start).days
 user_ticker_choice=st.text_input("Enter Ticker: ", 'AAPL')
 
 #specific stock data
-df=yf.download(user_ticker_choice,start,end)  
+df=yf.download(user_ticker_choice,start,end, progress=False)  
 
 
 #s&p500 data
